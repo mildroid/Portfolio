@@ -25,7 +25,6 @@ repositories {
 dependencies {
     implementation("io.ktor:ktor-server-core-jvm:$ktor_version")
     implementation("io.ktor:ktor-server-host-common-jvm:$ktor_version")
-    implementation("io.ktor:ktor-server-status-pages-jvm:$ktor_version")
     implementation("io.ktor:ktor-server-netty-jvm:$ktor_version")
     implementation("ch.qos.logback:logback-classic:$logback_version")
     testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
@@ -33,6 +32,7 @@ dependencies {
 
     implementation("io.ktor:ktor-server-html-builder:$ktor_version")
     implementation("org.jetbrains.kotlin-wrappers:kotlin-css:1.0.0-pre.332-kotlin-1.6.21")
+//    implementation("org.jetbrains.kotlin-wrappers:kotlin-css:1.0.0-pre.332-kotlin-1.7.10")
 }
 
 task("stage").dependsOn("installDist")

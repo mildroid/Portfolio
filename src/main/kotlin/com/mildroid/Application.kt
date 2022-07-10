@@ -8,5 +8,6 @@ fun main() {
     val port = System.getenv("PORT")?.toInt() ?: 8080
     embeddedServer(Netty, port = port, host = "0.0.0.0") {
         configureRouting()
+        configureDsl()
     }.start(wait = true)
 }
