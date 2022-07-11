@@ -41,7 +41,7 @@ fun Application.configureDsl() {
             call.respondCss {
                 body {
                     color = Color.white
-                    backgroundImage = Image("url('/assets/img/bg.svg')")
+                    backgroundImage = Image("url(\"${backgroundImages().random()}\")")
                     backgroundSize = "cover"
 
                     margin(32.px)
@@ -66,8 +66,15 @@ fun Application.configureDsl() {
             }
         }
     }
+
 }
 
+private fun backgroundImages() = listOf(
+    "https://drive.google.com/uc?id=1Sd9R4qbVuad_Ok6eGALpXiW8TdojbUQj&export=download",
+    "https://drive.google.com/uc?id=1sV2FUN75E7hi0EKd5KZ_-QYOuF2MNrDP&export=download",
+    "https://drive.google.com/uc?id=1hkyvfrw2_u2BXRjk50aol6Mt3VxUr-oi&export=download",
+    "https://drive.google.com/uc?id=1dHT_mhh7iAhAplWf1bMQQHiR97mCgfp9&export=download"
+)
 suspend inline fun ApplicationCall.respondCss(builder: CssBuilder.() -> Unit) {
     this.respondText(CssBuilder().apply(builder).toString(), ContentType.Text.CSS)
 }
